@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_toast_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:gravity="center"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.practice.ToastDialog"
+    android:orientation="vertical">
+
+    <Button
+        android:text="Show Alert"
+        android:onClick="buttonClickAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        />
+
+    <Button
+        android:text="Show Aler with 2 buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonClickAction"
+        android:id="@+id/button2"
+         />
+    <Button
+        android:text="Show Alert with 3 buttons"
+        android:layout_width="wrap_content"
+        android:onClick="buttonClickAction"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        />
+
+</LinearLayout>

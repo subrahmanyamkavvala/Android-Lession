@@ -1,60 +1,61 @@
 package com.practice;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
-public class MainActivity extends Activity implements View.OnClickListener{
+import java.util.ArrayList;
+import java.util.Arrays;
 
-    Button cancel,submit;
-    EditText userName,password;
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener{
+    private static final String TAG = "MainActivity";
+    private String[] planets = new String[] { "Relative Layout", "Linear Layout", "Activities , LifeCycle"," Adapters, " +
+            "Custom Adapters", "ListView, Spinner","Views, layouts and Common UI components",
+            "Communicating data among Activities", "Toast , Dialog", "Status bar Notifications"};
+    private ArrayList<String> planetList = new ArrayList<String>();
+
+    ListView practiceListView;
+
+    ArrayAdapter<String> listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cancel = (Button)findViewById(R.id.button) ;
-        submit = (Button)findViewById(R.id.button2) ;
-        userName = (EditText)findViewById(R.id.userName) ;
-        password = (EditText)findViewById(R.id.editText2) ;
 
-        userName.setText("enter your user name");
-        password.setText("enter your user pass");
+        planetList.addAll( Arrays.asList(planets));
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        practiceListView = (ListView)findViewById(R.id.mainListView) ;
 
-                Log.d("MainActivity","onclicke what u want to do ?");
-                String username= userName.getText().toString();
-                String pass = password.getText().toString();
-                Log.d("MainActivity","username "+username);
-                Log.d("MainActivity","passs  "+pass);
-
-
-            }
-        });
-
-        submit.setOnClickListener(this);
-
-
-        Log.d("MainActivity","OnCreate Called");
-
+        listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+        // Set the ArrayAdapter as the ListView's adapter.
+        practiceListView.setAdapter( listAdapter );
+        practiceListView.setOnItemClickListener(this);
 
 
     }
 
     @Override
-    public void onClick(View v) {
-        Log.d("MainActivity","summit clicked ");
-        String username= userName.getText().toString();
-        String pass = password.getText().toString();
-        Log.d("MainActivity","username "+username);
-        Log.d("MainActivity","passs  "+pass);
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Log.d(TAG,"onitemClicekd : "+position);
+        switch (position){
+            case 0:
+                Intent intent = new Intent(this,RelativeLayoutActivity.class);
+                startActivity(intent);
+                break;
+            case 1:
+                Intent intent2 = new Intent(this,ToastDialog.class);
+                startActivity(intent2);
+                break;
+        }
 
     }
 }
