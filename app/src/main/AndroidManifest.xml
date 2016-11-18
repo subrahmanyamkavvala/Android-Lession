@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".ToastDialog"></activity>
+        <activity android:name=".ToastDialog" />
+        <activity android:name=".SpinnerDemo" />
+        <activity android:name=".CustomAdapterDemo" />
+        <activity android:name=".ActivityResultDemo" />
+        <activity android:name=".ResultReturnActivity"></activity>
     </application>
 
 </manifest>

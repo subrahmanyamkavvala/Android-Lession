@@ -42,12 +42,13 @@ public class ToastDialog extends AppCompatActivity {
         alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 // Write your code here to execute after dialog closed
-                Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_LONG).show();
             }
         });
 
         // Showing Alert Message
         alertDialog.show();
+       // alertDialog.cancel();
     }
     private void showDialogwithTowButtons(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);

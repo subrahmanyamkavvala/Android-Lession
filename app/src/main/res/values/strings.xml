@@ -3,5 +3,7 @@
 
 
     <string name="sample">Sample</string>
+    <string name="status_prompt">Choose a Status</string>
+
 
 </resources>
