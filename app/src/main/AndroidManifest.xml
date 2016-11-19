@@ -20,7 +20,20 @@
         <activity android:name=".SpinnerDemo" />
         <activity android:name=".CustomAdapterDemo" />
         <activity android:name=".ActivityResultDemo" />
-        <activity android:name=".ResultReturnActivity"></activity>
+        <activity android:name=".ResultReturnActivity" />
+        <activity android:name=".common.BroadCastReceiverDemo"></activity>
+
+
+        <receiver android:name=".common.BroadCastReceiverDemo$PowerChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"></action>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"></action>
+            </intent-filter>
+        </receiver>
+
+
+
     </application>
 
 </manifest>

@@ -2,17 +2,14 @@ package com.practice;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.SimpleCursorTreeAdapter;
+
+import com.practice.common.BroadCastReceiverDemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,9 +18,18 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
     private static final String TAG = "MainActivity";
 
-    private String[] lessions = new String[] { "Relative Layout", "Linear Layout", "Activities , LifeCycle"," Adapters, " +
-            "Custom Adapters", "ListView, SpinnerDemo","Views, layouts and Common UI components",
-            "Communicating data among Activities", "Toast , Dialog", "Status bar Notifications"};
+    private String[] lessions = new String[] {
+            "Relative Layout",
+            "Linear Layout",
+            "Activities , LifeCycle",
+            " Adapters, Custom Adapters",
+            "ListView, SpinnerDemo",
+            "Views, layouts and Common UI components",
+            "Communicating data among Activities",
+            "Toast , Dialog",
+            "BroadCast Receiver",
+            "Status bar Notifications"
+    };
 
     private ArrayList<String> planetList = new ArrayList<String>();
 
@@ -105,6 +111,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             case 6:
                 Intent intent7 = new Intent(this,ActivityResultDemo.class);
                 startActivity(intent7);
+                break;
+
+            case 8:
+                Intent intent8 = new Intent(this,BroadCastReceiverDemo.class);
+                startActivity(intent8);
                 break;
         }
 
