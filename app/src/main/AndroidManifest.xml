@@ -21,19 +21,21 @@
         <activity android:name=".CustomAdapterDemo" />
         <activity android:name=".ActivityResultDemo" />
         <activity android:name=".ResultReturnActivity" />
-        <activity android:name=".common.BroadCastReceiverDemo"></activity>
+        <activity android:name=".common.BroadCastReceiverDemo" />
 
-
-        <receiver android:name=".common.BroadCastReceiverDemo$PowerChangeReceiver" >
+        <receiver android:name=".common.BroadCastReceiverDemo$PowerChangeReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"></action>
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"></action>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
 
-
-
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FragmentExample"></activity>
     </application>
 
 </manifest>

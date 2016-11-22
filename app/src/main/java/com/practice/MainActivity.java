@@ -3,6 +3,7 @@ package com.practice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,6 +29,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             "Communicating data among Activities",
             "Toast , Dialog",
             "BroadCast Receiver",
+            "TabActivity",
+            "Fragments",
             "Status bar Notifications"
     };
 
@@ -116,6 +119,16 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             case 8:
                 Intent intent8 = new Intent(this,BroadCastReceiverDemo.class);
                 startActivity(intent8);
+                break;
+
+            case 9:
+                Intent intent9 = new Intent(this,TabActivity.class);
+                startActivity(intent9);
+                break;
+
+            case 10:
+                Intent intent10 = new Intent(this,FragmentExample.class);
+                startActivity(intent10);
                 break;
         }
 
