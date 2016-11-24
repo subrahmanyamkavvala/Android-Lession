@@ -31,7 +31,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             "BroadCast Receiver",
             "TabActivity",
             "Fragments",
-            "Status bar Notifications"
+            "AsynTask",
+            "Handler"
+
     };
 
     private ArrayList<String> planetList = new ArrayList<String>();
@@ -129,6 +131,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             case 10:
                 Intent intent10 = new Intent(this,FragmentExample.class);
                 startActivity(intent10);
+                break;
+
+            case 11:
+                Intent intent11 = new Intent(this,AsyncTaskDemo.class);
+                startActivity(intent11);
+                break;
+            case 12:
+                Intent intent12 = new Intent(this,HandlerDemo.class);
+                startActivity(intent12);
                 break;
         }
 

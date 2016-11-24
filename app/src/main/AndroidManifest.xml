@@ -35,7 +35,9 @@
             android:name=".TabActivity"
             android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FragmentExample"></activity>
+        <activity android:name=".FragmentExample" />
+        <activity android:name=".AsyncTaskDemo" />
+        <activity android:name=".HandlerDemo"></activity>
     </application>
 
 </manifest>
