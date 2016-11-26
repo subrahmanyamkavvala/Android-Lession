@@ -2,6 +2,7 @@ package com.practice;
 
 import android.os.Handler;
 import android.os.Message;
+import android.os.Messenger;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +19,17 @@ public class HandlerDemo extends AppCompatActivity {
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
+            int local_counter = msg.arg1;
+
             super.handleMessage(msg);
-            tv_counter.setText(String.valueOf(counter));
+            Log.d("Handler","thread name"+Thread.currentThread().getName());
+            Log.d("Handler","WHAT : "+msg.what);
+            Log.d("Handler","ARG! : "+msg.arg1);
+            Log.d("Handler","ARG2 : "+msg.arg2);
+            Log.d("Handler","OBJ : "+msg.obj);
+
+
+            tv_counter.setText(msg.obj+String.valueOf(local_counter));
 
         }
     };
@@ -47,8 +57,11 @@ public class HandlerDemo extends AppCompatActivity {
         @Override
         public void run() {
             super.run();
-            Log.d("Counter","run");
-
+            Log.d("Counter","run"+Thread.currentThread().getName() );
+         //http;;
+        ///  images 50 sec
+            // main 50n
+            // main can 10 long runng
             while (counter<100){
 
                 try {
@@ -57,8 +70,17 @@ public class HandlerDemo extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 counter++;
-                handler.sendEmptyMessage(0);
-                tv_counter.setText(String.valueOf(counter));
+
+              // Message msg = handler.obtainMessage(100,counter,20);
+                Message ms1 = new Message();
+                ms1.what = 100;
+                ms1.arg1 = counter;
+                ms1.arg2 = 20;
+                ms1.obj= "hello";
+
+               handler.sendMessage(ms1);
+                handler.removeCallbacks(null);
+                //tv_counter.setText(String.valueOf(counter));
             }
 
         }

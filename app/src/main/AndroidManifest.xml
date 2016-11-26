@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.practice">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,7 +40,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FragmentExample" />
         <activity android:name=".AsyncTaskDemo" />
-        <activity android:name=".HandlerDemo"></activity>
+        <activity android:name=".HandlerDemo" />
+        <activity android:name=".SharedPreferenceDemo" />
+        <activity android:name=".SqliteDBActivty"></activity>
     </application>
 
 </manifest>

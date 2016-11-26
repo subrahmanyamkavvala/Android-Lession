@@ -24,6 +24,8 @@ public class AsyncTaskDemo extends AppCompatActivity {
     class  DownloadTask extends AsyncTask<Void,Integer,String>{
 
         private int progress = 0;
+
+
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
@@ -40,6 +42,9 @@ public class AsyncTaskDemo extends AppCompatActivity {
                     Thread.sleep(1000);
                     progress++;
                     publishProgress(progress);
+                    //handl.
+                    //handl.sen )_
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -51,6 +56,7 @@ public class AsyncTaskDemo extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            //tv.setText(result)
             Log.d("DownloadTask","onPostExecute : "+s);
         }
     }

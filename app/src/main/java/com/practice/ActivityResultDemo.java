@@ -33,7 +33,7 @@ public class ActivityResultDemo extends Activity {
             public void onClick(View v) {
 
                 Name = SendingName.getText().toString();
-                intent = new Intent(getApplicationContext(),ResultReturnActivity.class);
+                intent = new Intent(ActivityResultDemo.this,ResultReturnActivity.class);
                 intent.putExtra("name", Name);
                 startActivityForResult(intent, 1);
 

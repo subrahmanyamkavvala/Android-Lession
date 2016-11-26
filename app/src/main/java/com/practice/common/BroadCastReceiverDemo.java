@@ -30,6 +30,9 @@ public class BroadCastReceiverDemo extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
 
             String action = intent.getAction();
+            //intent.getIntExtra("INT",);
+
+
             Log.d("PowerReceiver","onReceive : "+action);
             if (action.equals(Intent.ACTION_POWER_CONNECTED)){
                 powerStatus.setText("Power Connected");
@@ -39,8 +42,5 @@ public class BroadCastReceiverDemo extends AppCompatActivity {
             }
         }
     }
-
-
-
 
 }

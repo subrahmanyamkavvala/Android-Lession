@@ -22,8 +22,11 @@ public class ResultReturnActivity extends Activity {
 
         one = (TextView)findViewById(R.id.textView1);
         Back = (Button)findViewById(R.id.button1);
+
+
         Intent intent = getIntent();
-        one.setText(getIntent().getStringExtra("name"));
+
+        one.setText(intent.getStringExtra("name"));
         ActivityResult = getIntent().getStringExtra("name");
 
         Back.setOnClickListener(new View.OnClickListener() {

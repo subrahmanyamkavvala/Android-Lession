@@ -32,7 +32,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             "TabActivity",
             "Fragments",
             "AsynTask",
-            "Handler"
+            "Handler",
+            "Shared Preferences",
+            "SQLITE DB"
 
     };
 
@@ -141,6 +143,17 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent intent12 = new Intent(this,HandlerDemo.class);
                 startActivity(intent12);
                 break;
+
+            case 13:
+                Intent intent13 = new Intent(this,SharedPreferenceDemo.class);
+                startActivity(intent13);
+                break;
+            case 14:
+                Intent intent14 = new Intent(this,SqliteDBActivty.class);
+                startActivity(intent14);
+                break;
+
+
         }
 
     }
