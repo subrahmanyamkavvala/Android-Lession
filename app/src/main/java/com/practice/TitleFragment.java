@@ -101,6 +101,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
+        //fragment
+        //
+
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

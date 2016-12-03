@@ -2,6 +2,7 @@ package com.practice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -34,7 +35,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             "AsynTask",
             "Handler",
             "Shared Preferences",
-            "SQLITE DB"
+            "SQLITE DB",
+            "Bound Service",
+            "Memory Leak"
 
     };
 
@@ -153,6 +156,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 startActivity(intent14);
                 break;
 
+            case 15:
+                Intent intent15 = new Intent(this,ServiceDemoActivity.class);
+                startActivity(intent15);
+                break;
+
+            case 16:
+                Intent intent16 = new Intent(this,MemoryLeakActivity.class);
+                startActivity(intent16);
+                break;
 
         }
 

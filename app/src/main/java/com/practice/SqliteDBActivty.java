@@ -20,13 +20,14 @@ public class SqliteDBActivty extends Activity {
 
 
         Log.d("Insert: ", "Inserting ..");
-        db.addContact(new Contact("krishna","9100000000"));
-        db.addContact(new Contact("ram", "9199999999"));
-        db.addContact(new Contact("john", "9522222222"));
-        db.addContact(new Contact("rehman", "9533333333"));
+        db.addContact(new Contact("abcd","9100000000"));
+        db.addContact(new Contact("xxxxx", "9199999999"));
+        db.addContact(new Contact("rrrrr", "9522222222"));
+        db.addContact(new Contact("8o989987", "9533333333"));
 
-        // Reading all contacts
+        // Reading all contactsd
         Log.d("Reading: ", "Reading all contacts..");
+
         List<Contact> contacts = db.getAllContacts();
 
         for (Contact cn : contacts) {

@@ -42,10 +42,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        //create taable tableName Student (st_name  cvarChar ,st_ind int):
+        //CRUD operation
+
+        //db.execSQL("CREATE ");
+        //db.insert(valiuuse)
+        //db.update("update")
+        //db.delete(skdhfj)
+
+        //ID NAME PHNOO
+        //11   xc   7809998p9
+
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
                 + KEY_PH_NO + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
+
+
     }
 
     // Upgrading database
@@ -66,6 +80,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
+
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName()); // Contact Name
         values.put(KEY_PH_NO, contact.getPhoneNumber()); // Contact Phone
@@ -76,6 +91,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Getting single contact
+    //1244
     public Contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -95,6 +111,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public List<Contact> getAllContacts() {
         List<Contact> contactList = new ArrayList<Contact>();
         // Select All Query
+        //select Name From contacts
+        //where id = "1234"
+        //group by name
+
         String selectQuery = "SELECT  * FROM " + TABLE_CONTACTS;
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -124,7 +144,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, contact.getName());
         values.put(KEY_PH_NO, contact.getPhoneNumber());
 
-        // updating row
+        //ID NAME PHNO
+        //1024 xxx 12345
+
+        //1024 xxx 9876
+
+        // update caontact where key id == 1024 and name = xxx phno = 9876
+         // updating row
         return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(contact.getID()) });
     }
@@ -143,10 +169,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
         cursor.close();
 
         // return count
-        return cursor.getCount();
+        return count;
     }
 
 }

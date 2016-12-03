@@ -11,7 +11,6 @@ public class RelativeLayoutActivity extends AppCompatActivity implements View.On
     Button cancel,submit;
     EditText userName,password;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

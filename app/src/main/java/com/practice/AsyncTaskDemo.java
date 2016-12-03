@@ -1,10 +1,13 @@
 package com.practice;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 public class AsyncTaskDemo extends AppCompatActivity {
 
@@ -37,7 +40,7 @@ public class AsyncTaskDemo extends AppCompatActivity {
         protected String doInBackground(Void... voids) {
             Log.d("DownloadTask","doinprogress");
 
-            while(progress<=100) {
+            while(progress<=15) {
                 try {
                     Thread.sleep(1000);
                     progress++;
@@ -58,6 +61,29 @@ public class AsyncTaskDemo extends AppCompatActivity {
             super.onPostExecute(s);
             //tv.setText(result)
             Log.d("DownloadTask","onPostExecute : "+s);
+
+            AlertDialog alertDialog = new AlertDialog.Builder(AsyncTaskDemo.this).create();
+
+            // Setting Dialog Title
+            alertDialog.setTitle("Alert Dialog");
+
+            // Setting Dialog Message
+            alertDialog.setMessage("Welcome to Dialog sample..");
+
+            // Setting Icon to Dialog
+            alertDialog.setIcon(R.drawable.small);
+
+            // Setting OK Button
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // Write your code here to execute after dialog closed
+                    Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            // Showing Alert Message
+            alertDialog.show();
+            // alertDialog.cancel();
         }
     }
 }
